@@ -1,1 +1,284 @@
-@import "tailwindcss";
+/* --- Global Reset & Variables --- */
+:root {
+  --primary-green: #029c3d;
+  --light-green: #e6f5eb;
+  --dark-green: #016b29;
+  --text-dark: #333333;
+  --text-light: #ffffff;
+  --bg-white: #ffffff;
+  --gray-bg: #f4f4f4;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* Creates an invisible buffer for your sticky navbar */
+}
+
+body {
+  background-color: var(--bg-white);
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+/* --- Navigation --- */
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--primary-green);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  margin-right: auto;
+  color: var(--text-light);
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.navbar-link {
+  color: var(--text-light);
+  text-decoration: none;
+  margin-left: 1.5rem;
+  font-weight: 500;
+  position: relative; /* Needed for the underline effect */
+}
+.navbar-link:not(#login-btn)::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: var(--text-light);
+  transition: width 0.3s ease;
+}
+.navbar-link:not(#login-btn):hover::after {
+  width: 100%;
+}
+.navbar-link:not(#login-btn):hover {
+  color: var(--text-light); /* Ensures text stays solid white */
+}
+
+.navbar-link:hover {
+  color: #d1fae5; /* Lighter green on hover */
+}
+
+#login-btn {
+  border: 2px solid var(--text-light);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  background-color: transparent;
+  transition: all 0.3s ease;
+}
+
+#login-btn:hover {
+  background-color: var(--text-light);
+  color: var(--primary-green);
+}
+
+/* --- Hero Section --- */
+.hero-section {
+  background-color: var(--light-green);
+  padding: 6rem 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-content h1 {
+  font-size: 2.5rem;
+  color: var(--dark-green);
+  margin-bottom: 1rem;
+  max-width: 800px;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  max-width: 600px;
+}
+
+.Btnborder {
+  display: inline-block;
+  background-color: var(--primary-green);
+  color: var(--text-light);
+  padding: 0.8rem 2rem;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.Btnborder:hover {
+  background-color: var(--dark-green);
+  transform: translateY(-2px);
+}
+
+/* --- Features Section (Perfect Scrolling Marquee) --- */
+.features-section {
+  padding: 4rem 0;
+  text-align: center;
+  overflow: hidden; 
+}
+
+.features-section h2 {
+  color: var(--primary-green);
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.features-marquee {
+  display: flex;
+  width: max-content;
+  /* Adjust the 15s to make it faster or slower */
+  animation: scroll 15s linear infinite;
+  padding: 2rem 0; /* Prevents the scaled cards from getting cut off at the top/bottom */
+}
+
+/* Pauses the scrolling when you hover anywhere over the marquee */
+.features-marquee:hover {
+  animation-play-state: paused; 
+}
+
+.group {
+  display: flex;
+  gap: 2rem;
+  padding-right: 2rem; /* This replaces the gap on the parent to make the math perfect */
+}
+
+.card {
+  background-color: var(--bg-white);
+  border: 2px solid var(--light-green);
+  border-top: 5px solid var(--primary-green);
+  border-radius: 10px;
+  padding: 2rem;
+  width: 300px;
+  text-align: left;
+  position: relative; /* Required for z-index to work */
+  transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+  cursor: pointer;
+}
+
+.card h5 {
+  color: var(--dark-green);
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+/* The Pop-up Scale Effect */
+.card:hover {
+  transform: scale(1.1);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+  z-index: 10; /* Ensures the hovered card stays on top of the adjacent cards */
+}
+
+/* The Perfect Loop Animation */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* --- About Section --- */
+.about-section {
+  padding: 4rem 2rem;
+  text-align: center;
+  background-color: var(--gray-bg);
+}
+
+.about-section h2 {
+  color: var(--primary-green);
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.about-section p {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+}
+
+
+/* --- Footer --- */
+.footer {
+  background-color: var(--dark-green);
+  color: var(--text-light);
+  padding: 1rem 1rem 0.5rem 0.5rem;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  max-width: max-content;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer-section h3 {
+    /* border:2px solid black; */
+  color: var(--light-green);
+  max-width: max-content;
+  text-decoration: underline var(--light-green);
+  text-underline-offset: 2px;
+  margin-bottom: 0.2rem;
+  font-size: 1.2rem;
+}
+
+.footer-section p {
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer-section a {
+  color: var(--text-light);
+  text-decoration: none;
+  display: block;
+  margin-bottom: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+  color: var(--light-green);
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 0.85rem;
+}
+#contact-email{
+    display:flex;
+}
+#contact-email a{
+    margin-left:5px;
+}
+
+/* extra */

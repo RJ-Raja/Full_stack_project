@@ -1,21 +1,98 @@
 <!doctype html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
-  <!-- <link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
   <link rel="stylesheet" href="./src/style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>client</title>
+  <title>AgriStack | Empowering Farmers</title>
 </head>
 
 <body>
-  <h1 class="text-4xl font-bold text-blue-500 bg-gray-100 p-10 text-center">
-    Tailwind is Working!
-  </h1>
-  <div id="app"></div>
-  <script type="module" src="/src/main.js"></script>
+  <header>
+    <nav class="navbar">
+      <div class="logo">AgriStack</div>
+      <a class="navbar-link" href="#hero">Home</a>
+      <a class="navbar-link" href="#features">Features</a>
+      <a class="navbar-link" href="#about">About</a>
+      <a class="navbar-link" id="login-btn" href="auth.html">Login</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="hero" class="hero-section">
+      <div class="hero-content">
+        <h1 id="hero_h1">AgriStack</h1>
+        <h2>Empowering Farmers. Connecting Bulk Buyers.</h2>
+        <h2>Transforming Agricultural Trade.</h2>
+        <p id="hero_content">A modern B2B marketplace where farmers sell collectively, buyers bid transparently, and smart inventory management reduces wastage.</p>
+      </div>
+      <div class="heroButton">
+        <a href="auth.html" class="Btnborder">Lets Get Started</a>
+      </div>
+    </section>
+
+    <section id="features" class="features-section">
+      <h2>Platform Features</h2>
+      <div class="features-marquee">
+        <div class="group">
+          <div class="card">
+            <h5>Collective Selling</h5>
+            <p>Group produce with other farmers to meet bulk buyer demands.</p>
+          </div>
+          <div class="card">
+            <h5>Transparent Bidding</h5>
+            <p>Real-time price discovery ensuring fair compensation.</p>
+          </div>
+          <div class="card">
+            <h5>Smart Inventory</h5>
+            <p>Reduce wastage with AI-driven storage management.</p>
+          </div>
+        </div>
+        <div aria-hidden="true" class="group">
+          <div class="card">
+            <h5>Collective Selling</h5>
+            <p>Group produce with other farmers to meet bulk buyer demands.</p>
+          </div>
+          <div class="card">
+            <h5>Transparent Bidding</h5>
+            <p>Real-time price discovery ensuring fair compensation.</p>
+          </div>
+          <div class="card">
+            <h5>Smart Inventory</h5>
+            <p>Reduce wastage with AI-driven storage management.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about-section">
+      <h2>About AgriStack</h2>
+      <p>We are dedicated to bridging the gap between local farmers and large-scale buyers, creating a sustainable and profitable ecosystem for everyone involved.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-section brand-info">
+        <h3>AgriStack</h3>
+        <p>A modern B2B marketplace transforming agricultural trade through technology and transparency.</p>
+      </div>
+      <div class="footer-section links">
+        <h3>Quick Links</h3>
+        <a href="#hero">Home</a>
+        <a href="#features">Features</a>
+        <a href="#about">About Us</a>
+      </div>
+      <div class="footer-section contact">
+        <h3>Contact Us</h3>
+        <p id="contact-email">Email: <a href="mailto:contact@agristack.example.com">contact@agristack.com</a></p>
+        <p>Phone: +91 1111111111</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 AgriStack. All rights reserved.</p>
+    </div>
+  </footer>
 
 </body>
-
 </html>
