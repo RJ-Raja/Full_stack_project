@@ -8,6 +8,7 @@ PBL Full stack project
     <li>Rajat Negi </li>
     <li>Shivang</li>
     <li>Suyash uniyal</li>
+    <li>Rishav Singh Negi</li>
   </ol>
 </p>
 
